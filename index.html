@@ -14,25 +14,38 @@
 
 <body>
 
-    <header class="d-flex align-items-center hero">
-        <h1>5-Day Weather Planner</h1>
+    <header class="d-flex align-items-center jumbotron jumbotron-fluid hero">
+        <h1 class="display-3">5-Day Weather Planner</h1>
     </header>
-    <main class="container">
+    <main class="d-flex container">
         <!-- Need the search bar on the left hand side. Will have a title, a text entry, a button. Below will be recent searches, populated from localstorage -->
-        <form id="location-form">
-            <label for="location-input">Search for a city:</label>
-            <br>
-            <input type="text" id="location-input" placeholder="Your city here">
-            <!-- Past results will go here -->
-            <br>
-            <input type="submit" value="Click Here" id="location-search">
-            <div id="locations-view"></div>
-        </form>
-        <!-- Once a location is entered in and search is activated, The rest of the screen will populate the results. There will be a larger box with the current info and below it will be cards for the next five days. -->
-        <div>
-
+        <div class="col-md-3 ">
+            <form id="content-left location-form">
+                <label class="form-row" for="location-input">Search for a city:</label>
+                <br>
+                <input type="text" id="location-input" placeholder="Your city here">
+                <!-- Past results will go here -->
+                <br>
+                <input type="submit" value="Click Here" id="location-search">
+                <div id="locations-view" class="list-group"></div>
+            </form>
         </div>
+        <!-- Once a location is entered in and search is activated, The rest of the screen will populate the results. There will be a larger box with the current info and below it will be cards for the next five days. -->
+        <div id="content-right" class="content-right col-md-9 pt-4">
+            <div id="current-weather" class="border">
+            
+            </div>
+            <!-- Below the current weather will be cards with the five day forecast -->
+            <div class="mt-6" id="five-day">
+                <h4>Five Day outlook:</h4>
+            </div>
+        </div>
+        <section>
+
+        </section>
     </main>
+    <!-- Link the DayJS library -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
