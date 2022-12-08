@@ -14,35 +14,38 @@
 
 <body>
 
-    <header class="d-flex align-items-center jumbotron jumbotron-fluid hero">
-        <h1 class="display-3">5-Day Weather Planner</h1>
+    <header class="align-items-center jumbotron bg-primary text-white">
+        <h1 class="display-4">5-Day Weather Planner</h1>
     </header>
-    <main class="d-flex container">
+    <main class="container-fluid">
         <!-- Need the search bar on the left hand side. Will have a title, a text entry, a button. Below will be recent searches, populated from localstorage -->
-        <div class="col-md-3 ">
-            <form id="content-left location-form">
-                <label class="form-row" for="location-input">Search for a city:</label>
-                <br>
-                <input type="text" id="location-input" placeholder="Your city here">
-                <!-- Past results will go here -->
-                <br>
-                <input type="submit" value="Click Here" id="location-search">
-                <div id="locations-view" class="list-group"></div>
-            </form>
+        <div class="row">
+            <div class="content-left col-2">
+                <form id="content-left location-form">
+                    <h3 class="form-row" for="location-input">Search for a city:</h3>
+                    <br>
+                    <input type="text" id="location-input" placeholder="Your city here">
+                    <!-- Past results will go here -->
+                    <input type="submit" value="Search" id="location-search">
+                    <div id="locations-view" class="list-group mt-4"></div>
+                </form>
+            </div>
+            <!-- Once a location is entered in and search is activated, The rest of the screen will populate the results. There will be a larger box with the current info and below it will be cards for the next five days. -->
+            <div id="content-right" class="content-right col-9 pt-4">
+                <div id="current-weather" class="border">
+                    <h2>Current forecast:</h2>
+                </div>
+                <!-- Below the current weather will be cards with the five day forecast -->
+                <div class="mt-5" id="five-day">
+                    <h4>Five Day outlook:</h4>
+                </div>
+            </div>
         </div>
-        <!-- Once a location is entered in and search is activated, The rest of the screen will populate the results. There will be a larger box with the current info and below it will be cards for the next five days. -->
-        <div id="content-right" class="content-right col-md-9 pt-4">
-            <div id="current-weather" class="border">
+        <div class="content-right col-1">
             
-            </div>
-            <!-- Below the current weather will be cards with the five day forecast -->
-            <div class="mt-6" id="five-day">
-                <h4>Five Day outlook:</h4>
-            </div>
         </div>
-        <section>
 
-        </section>
+
     </main>
     <!-- Link the DayJS library -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
