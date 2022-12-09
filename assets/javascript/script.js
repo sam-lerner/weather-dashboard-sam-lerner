@@ -16,6 +16,7 @@ function currentDayJs() {
 
 // function to display weather content
 function displayWeatherInfo(city) {
+ 
     // First, search for the city and get the five day forecast
     var queryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
@@ -107,6 +108,8 @@ $('#location-search').on('click', function (event) {
     localStorage.setItem('city', cityArr);
     // console.log('previous ' + cityArr)
     displaySearches(cityArr);
+    // $('#location-input').value = "";
+    document.getElementById('location-input').value = '';
 })
 
 displaySearches(previousCity)
